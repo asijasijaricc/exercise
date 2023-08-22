@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    img {
+      width: 300px;
+    }
+    #neki {
+      width: 100%;
+      height: 100%;
+      margin: 50px auto;
+    }
+    .unutar {
+      display: flex;
+      width: 35%;
+      height: 250px;
+      margin-bottom: 10px;
+      border: 2px solid black;
+      margin: 50px auto;
+    }
+  </style>
+  <body>
+    <div id="neki"></div>
+    <script>
+      let students = [
+        {
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 765432,
+          prosek: 9,
+          slika: "slika.jpeg",
+        },
+        {
+          ime: "Mejra",
+          prezime: "Mujovic",
+          index: 765432,
+          prosek: 7,
+          slika: "slika.jpeg",
+        },
+        {
+          ime: "Emina",
+          prezime: "Tutic",
+          index: 98762,
+          prosek: 9,
+          slika: "slika.jpeg",
+        },
+        {
+          ime: "Merva",
+          prezime: "Rec",
+          index: 2349876,
+          prosek: 6,
+          slika: "slika.jpeg",
+        },
+      ];
+      function neka(neki, obj) {
+        var spoljasni = document.getElementById("neki");
+        var ul = document.createElement("ul");
+        var li1 = document.createElement("li");
+        var li2 = document.createElement("li");
+        var li3 = document.createElement("li");
+        var li4 = document.createElement("li");
+        var dugme = document.createElement("button");
+        dugme.innerHTML("Prosledi");
+        li1.innerHTML = "Moje ime je" + students.ime;
+        li2.innerHTML = "Moje prezime je" + students.prezime;
+        li3.innerHTML = "Moje prosek ocena je" + students.prosek;
+        li4.appendChild(dugme);
+        var div2 = document.createElement("div");
+        div2.classList = "unutar";
+        let pic = document.createElement("img");
+        pic.src = students.slika;
+        div2.appendChild(pic);
+        ul.appendChild(li1);
+        ul.appendChild(li2);
+        ul.appendChild(li3);
+        ul.appendChild(li4);
+        div2.appendChild(ul);
+        spoljasni.appendChild(div2);
+      }
+      prikazi(neka, students);
+    </script>
+  </body>
+</html>
