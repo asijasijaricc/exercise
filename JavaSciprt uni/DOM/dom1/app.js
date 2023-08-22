@@ -1,8 +1,43 @@
-// Kreirati odeljak za JavaScript unutar zaglavlja stranice.
-// Kreirati JavaScript funkciju pocetak(), koja se izvršava kada se stranica učita.
-// Funkcija pocetak() menja tekst naziva iz zaglavlja dokumenta u "JS primer".
-// Kreirati funkciju promena() koja se izvršava u trenutku kada se klikne na H1 naslov dokumenta.
-// Funkcija promena() menja izgled teksta "Korekcija izgleda", tako što postavlja boju pozadine na #ffc, boju slova na crvenu, slova postaju podebljana i ispisana fontom sans-serif.
-// Kreirati funkcije ulaz(obj) i izlaz(obj) koje se izvršavaju u trenutku kada se miš postavi iznad pasusa "Promena klase i sadržaja", odnosno kada se miš ukloni i to tako da se prilikom poziva funkcije prosleđuje sam elemenat.
-// Funkcija ulaz(obj) zadatom objektu postavlja klasu "aktivan" i menja mu sadržaj u tekst "Miš preko elementa".
-// Funkcija izlaz(obj) zadatom objektu postavlja klasu "obican" i menja mu sadržaj u tekst "Promena klase i sadržaja".
+// Kreirati niz od 4 objkta. svaki objekat sadrzi sledece informacije: ime i prezime, prosek ocena i outanja do slike.
+// Potom koristevi js DOM kreirati tabelu u kojoj ce se prikazati infomacije i fotografije svakog od studenata.
+// Tabela treba da sadrzi zaglavlje cije celije su: ime, prezime, broj indeksa. slika godina studija.
+// Preko CSSa obojiti zaglavlje zelenom pozadinskom bojom. Unutar redova tabelele se nalze podaci iz objekta
+
+let student = [
+  {
+    ime: "Asija",
+    prezime: "Sijaric",
+    index: 234567,
+    ocene: [5, 6, 7, 10, 6, 8, 8],
+    prosek: function () {
+      return this.ocene.reduce((prev, curr) => prev + curr) / this.ocene.length;
+    },
+  },
+  {
+    ime: "Mejra",
+    prezime: "Mujovic",
+    index: 765432,
+    ocene: [7, 8, 8, 10, 9, 10, 6],
+    prosek: function () {
+      return this.ocene.reduce((prev, curr) => prev + curr) / this.ocene.length;
+    },
+  },
+  {
+    ime: "Emina",
+    prezime: "Tutic",
+    index: 98762,
+    ocene: [7, 6, 10, 10, 6, 7, 7],
+    prosek: function () {
+      return this.ocene.reduce((prev, curr) => prev + curr) / this.ocene.length;
+    },
+  },
+  {
+    ime: "Merva",
+    prezime: "Rec",
+    index: 2349876,
+    ocene: [7, 10, 6, 8, 8, 6, 10, 9],
+    prosek: function () {
+      return this.ocene.reduce((prev, curr) => prev + curr) / this.ocene.length;
+    },
+  },
+];
