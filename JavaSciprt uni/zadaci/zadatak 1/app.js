@@ -7,19 +7,22 @@
 // Funkcija se poziva odmah pri pokretanju programa.
 
 function radnik() {
-  let workers = [];
-  for (let i = 0; i < 5; i++) {
-    let radnik = prompt("Unesite imena radnika");
-    workers.push(radnik);
-  }
+  let workers = ["asija", "asija", "asija", "asija", "asija"];
+  // for (let i = 0; i < 5; i++) {
+  //   let radnik = prompt("Unesite imena radnika");
+  //   workers.push(radnik);
+  // }
   let mail = workers.map((el) => `${radnik}gmail.com`);
-  const btn = document.getElementById("btn");
+  // const btn = document.getElementById("btn");
 
-  btn.addEventListener("click", () => {
-    const random = Math.floor(Math.random() * mail.length);
-    const daj = random[mail];
-    alert(daj);
-  });
+  // btn.addEventListener("click", () => {
+  const random = Math.floor(Math.random() * mail.length);
+  // const daj = random[mail];
+  // alert(daj);
+  //   });
+  document.write("<ul>");
+  document.write("<li>" + random[index]);
+  document.write("</ul>");
 }
 
 radnik();
