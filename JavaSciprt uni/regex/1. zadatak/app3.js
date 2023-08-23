@@ -8,8 +8,19 @@
 
 function rigi(tekst) {
   let reg = /[a-zA-z]?[0-9]{2,3}[@!$#&*.\\\-_+]{8,}/;
-  let end = tekst.match(reg);
-  if ("end" != null) {
-    return;
-  }
+
+  let poruka = document.getElementById("zap");
+  let inp = document.getElementById("inti");
+  inp.addEventListener("input", () => {
+    const password = inp.value;
+    if (reg.match(password)) {
+      poruka.textContent = "Ispravna poruka";
+      poruka.style.color = "green";
+    } else {
+      poruka.textContent = "Nespravna poruka";
+      poruka.style.color = "red";
+    }
+  });
 }
+
+rigi();
