@@ -5,3 +5,21 @@
 // prikazuje alert-a u kome je ispisana neka od adresa u nizu. Bitno: na svaki klik treba da izlazi
 // drugacija adresa, to uraditi koristeci random generisanje.
 // Funkcija se poziva odmah pri pokretanju programa.
+
+function radnik() {
+  let workers = [];
+  for (let i = 0; i < 5; i++) {
+    let radnik = prompt("Unesite imena radnika");
+    workers.push(radnik);
+  }
+  let mail = workers.map((el) => `${radnik}gmail.com`);
+  const btn = document.getElementById("btn");
+
+  btn.addEventListener("click", () => {
+    const random = Math.floor(Math.random() * mail.length);
+    const daj = random[mail];
+    alert(daj);
+  });
+}
+
+radnik();
