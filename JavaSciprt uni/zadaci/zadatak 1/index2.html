@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Adrese Radnika</title>
+  </head>
+  <body>
+    <h2>Unesite Imena Radnika</h2>
+    <input type="text" id="nameInput" />
+    <button id="generateButton">Prikazi</button>
+
+    <script>
+      // Funkcija za kreiranje email adresa
+      function createEmails(names) {
+        var emails = [];
+        for (var i = 0; i < names.length; i++) {
+          var email = names[i] + "@gmail.com";
+          emails.push(email);
+        }
+        return emails;
+      }
+
+      // Funkcija za prikaz random email adrese
+      function showRandomEmail(emails) {
+        var randomIndex = Math.floor(Math.random() * emails.length);
+        alert(emails[randomIndex]);
+      }
+
+      // Pokretanje funkcije pri pokretanju programa
+      (function () {
+        var workerNames = [];
+        for (var i = 0; i < 5; i++) {
+          var name = prompt("Unesite ime radnika " + (i + 1) + ":");
+          workerNames.push(name);
+        }
+
+        var workerEmails = createEmails(workerNames);
+        var generateButton = document.getElementById("generateButton");
+
+        generateButton.addEventListener("click", function () {
+          showRandomEmail(workerEmails);
+        });
+      })();
+    </script>
+  </body>
+</html>
