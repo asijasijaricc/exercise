@@ -6,12 +6,72 @@
     <title>Document</title>
   </head>
   <body>
-    <tr>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
+    <table id="tabela">
+      <tr>
+        <th>Ime</th>
+        <th>Prezime</th>
+        <th>Prosek</th>
+        <th>Slika</th>
+        <th>Dugme</th>
+      </tr>
+    </table>
+    <script>
+      let studenti = [
+        {
+          ime: "Marko",
+          prezime: "Markovic",
+          prosek: 9.5,
+          fotografija: "marko.jpg",
+        },
+        {
+          ime: "Jelena",
+          prezime: "Jovanovic",
+          prosek: 8.7,
+          fotografija: "jelna.jpg",
+        },
+        {
+          ime: "Nikola",
+          prezime: "Nikolic",
+          prosek: 7.2,
+          fotografija: "nikola.jpg",
+        },
+        {
+          ime: "Ana",
+          prezime: "Anic",
+          prosek: 9.0,
+          fotografija: "ana.jpg",
+        },
+      ];
+
+      let tabela = document.getElementById("tabela");
+
+      studenti.forEach(function (student) {
+        let red = tabela.insertRow();
+
+        let celijaIme = red.insertCell();
+        celijaIme.textContent = student.ime;
+
+        let celijaPrezime = red.insertCell();
+        celijaPrezime.textContent = student.prezime;
+
+        let celijaProsek = red.insertCell();
+        celijaProsek.textContent = student.prosek;
+
+        let celijaSlika = red.insertCell();
+        let slika = document.creatElement("img");
+        slika.src = student.fotografija;
+        slika.alt = student.ime;
+        celijaSlika.appendChild(slika);
+
+        let celijaDugme = red.insertCell();
+        let dugme = document.creatElement("button");
+        dugme.textContent = "Prikazi ime";
+        dugme.style.backgroundColor = "green";
+        dugme.addEventListener("click", function () {
+          celijaIme.textContent = student.ime.toUpperCase();
+        });
+        celijaDugme.appendChild(dugme);
+      });
+    </script>
   </body>
 </html>
