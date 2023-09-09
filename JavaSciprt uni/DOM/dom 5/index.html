@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      .kartica {
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        width: 250px;
+        box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.1);
+      }
+
+      .slika {
+        width: 100%;
+      }
+
+      .naslov {
+        font-weight: bold;
+        margin: 10px 0px;
+      }
+
+      .vest {
+        margin: 10px 0px;
+      }
+
+      .dugme {
+        background-color: green;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="vestiContainer"></div>
+
+    <script>
+      let vesti = [
+        {
+          naslov: "Naslov 1",
+          vest: "Ovo je vest broj 1...",
+          slika: "slika1.jpg",
+        },
+        {
+          naslov: "Naslov 2",
+          vest: "Ovo je vest broj 2...",
+          slika: "slika2.jpg",
+        },
+        {
+          naslov: "Naslov 3",
+          vest: "Ovo je vest broj 3...",
+          slika: "slika3.jpg",
+        },
+        {
+          naslov: "Naslov 4",
+          vest: "Ovo je vest broj 4...",
+          slika: "slika4.jpg",
+        },
+      ];
+
+      let container = document.getElementById("vestiContainer");
+    </script>
+  </body>
+</html>
