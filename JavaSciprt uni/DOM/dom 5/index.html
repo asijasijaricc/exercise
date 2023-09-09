@@ -66,6 +66,36 @@
       ];
 
       let container = document.getElementById("vestiContainer");
+
+      vesti.forEach(function (vest) {
+        let kartica = document.createElement("div");
+        karica.className = "kartica";
+
+        let slika = document.createElement("img");
+        slika.className = "slika";
+        slika.src = vest.slika;
+        kartica.appendChild(slika);
+
+        let naslov = document.createElement("h13");
+        naslov.className = "naslov";
+        naslov.textContent = vest.naslov;
+        kartica.appendChild(naslov);
+
+        let vestP = document.createElement("p");
+        vestP.className = "vest";
+        vestP.textContent = vest.vest;
+        kartica.appendChild(vestP);
+
+        let dugme = document.createElement("button");
+        dugme.className = "dugme";
+        dugme.textContent = "Procitaj vise";
+        dugme.addEventListener("click", function () {
+          vestP.textContent = vest.vest.slice(0, 10) + "...";
+        });
+        kartica.appendChild(dugme);
+
+        vestiContainer.appendChild(kartica);
+      });
     </script>
   </body>
 </html>
