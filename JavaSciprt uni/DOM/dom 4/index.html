@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      td {
+        border: 1px solid black;
+      }
+    </style>
   </head>
   <body>
     <table id="tabela">
@@ -45,32 +50,65 @@
 
       let tabela = document.getElementById("tabela");
 
+      let red = document.createElement("tr");
+      let celija1 = document.createElement("th");
+      let celija2 = document.createElement("th");
+      let celija3 = document.createElement("th");
+      let celija4 = document.createElement("th");
+      let celija5 = document.createElement("th");
+
+      celija1.innerHTML = "";
+      // celija2.innerHTML = student.prezime;
+      // celija3.innerHTML = student.prosek;
+      // celija4.innerHTML = student.ime;
+
       studenti.forEach(function (student) {
-        let red = tabela.insertRow();
+        let red = document.createElement("tr");
+        let celija1 = document.createElement("td");
+        let celija2 = document.createElement("td");
+        let celija3 = document.createElement("td");
+        let celija4 = document.createElement("td");
+        let celija5 = document.createElement("td");
 
-        let celijaIme = red.insertCell();
-        celijaIme.textContent = student.ime;
+        let btn = document.createElement("button");
+        btn.innerHTML = "prosledi";
+        celija1.innerHTML = student.ime;
+        celija2.innerHTML = student.prezime;
+        celija3.innerHTML = student.prosek;
+        celija4.innerHTML = student.ime;
+        celija5.appendChild(btn);
+        red.appendChild(celija1);
+        red.appendChild(celija2);
+        red.appendChild(celija3);
+        red.appendChild(celija4);
+        red.appendChild(celija5);
 
-        let celijaPrezime = red.insertCell();
-        celijaPrezime.textContent = student.prezime;
+        tabela.appendChild(red);
+        // let red = tabela.insertRow();
 
-        let celijaProsek = red.insertCell();
-        celijaProsek.textContent = student.prosek;
+        // let celijaIme = red.insertCell();
+        // celijaIme.textContent = student.ime;
 
-        let celijaSlika = red.insertCell();
-        let slika = document.creatElement("img");
-        slika.src = student.fotografija;
-        slika.alt = student.ime;
-        celijaSlika.appendChild(slika);
+        // let celijaPrezime = red.insertCell();
+        // celijaPrezime.textContent = student.prezime;
 
-        let celijaDugme = red.insertCell();
-        let dugme = document.creatElement("button");
-        dugme.textContent = "Prikazi ime";
-        dugme.style.backgroundColor = "green";
-        dugme.addEventListener("click", function () {
-          celijaIme.textContent = student.ime.toUpperCase();
-        });
-        celijaDugme.appendChild(dugme);
+        // let celijaProsek = red.insertCell();
+        // celijaProsek.textContent = student.prosek;
+
+        // let celijaSlika = red.insertCell();
+        // let slika = document.creatElement("img");
+        // slika.src = student.fotografija;
+        // slika.alt = student.ime;
+        // celijaSlika.appendChild(slika);
+
+        // let celijaDugme = red.insertCell();
+        // let dugme = document.creatElement("button");
+        // dugme.textContent = "Prikazi ime";
+        // dugme.style.backgroundColor = "green";
+        // dugme.addEventListener("click", function () {
+        //   celijaIme.textContent = student.ime.toUpperCase();
+        // });
+        // celijaDugme.appendChild(dugme);
       });
     </script>
   </body>

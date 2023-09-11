@@ -17,14 +17,14 @@
     <br />
     <button id="dodaj">Prosledi</button>
 
-    <div id="bibiloteka"></div>
+    <div id="biblioteka"></div>
 
     <script>
       let nazivInput = document.getElementById("naziv");
       let autorInput = document.getElementById("autor");
       let godinaInput = document.getElementById("godina");
       let dodajKnjigu = document.getElementById("dodaj");
-      let bibil = document.getElementById("biblioteka");
+      let bibliotekaDiv = document.getElementById("biblioteka");
 
       dodajKnjigu.addEventListener("click", () => {
         let naziv = nazivInput.value;
@@ -53,9 +53,9 @@
 
         bibliotekaDiv.appendChild(knjigaDiv);
 
-        nazivInput.value = " ";
-        autorInput.value = " ";
-        goinaInput.value = " ";
+        nazivInput.value = "";
+        autorInput.value = "";
+        godinaInput.value = "";
       });
     </script>
   </body>

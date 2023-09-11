@@ -65,18 +65,18 @@
         },
       ];
 
-      let container = document.getElementById("vestiContainer");
+      let containerGlavni = document.getElementById("vestiContainer");
 
       vesti.forEach(function (vest) {
         let kartica = document.createElement("div");
-        karica.className = "kartica";
+        kartica.className = "kartica";
 
         let slika = document.createElement("img");
         slika.className = "slika";
         slika.src = vest.slika;
         kartica.appendChild(slika);
 
-        let naslov = document.createElement("h13");
+        let naslov = document.createElement("h3");
         naslov.className = "naslov";
         naslov.textContent = vest.naslov;
         kartica.appendChild(naslov);
@@ -94,7 +94,7 @@
         });
         kartica.appendChild(dugme);
 
-        vestiContainer.appendChild(kartica);
+        containerGlavni.appendChild(kartica);
       });
     </script>
   </body>
