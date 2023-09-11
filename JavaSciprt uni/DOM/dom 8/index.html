@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #tabela img {
+        width: 30px;
+        height: 30px;
+      }
+
+      #tabela th {
+        border: 1px solid black;
+        background-color: green;
+      }
+
+      #tabela td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tabela"></table>
+    <script>
+      let studenti = [
+        { ime: "Marko", prezime: "Markovic", prosek: 9.8, slika: "slika.jpg" },
+        {
+          ime: "Jovana",
+          prezime: "Jovanovic",
+          prosek: 7.9,
+          slika: "slika.jpg",
+        },
+        { ime: "Petar", prezime: "Petrovic", prosek: 7.4, slika: "slika.jpg" },
+        { ime: "Ivana", prezime: "Ivanovic", prosek: 10.0, slika: "slika.jpg" },
+      ];
+
+      let tabel = document.getElementById("tabela");
+
+      let red = document.createElement("tr");
+      let celija1 = document.createElement("th");
+      let celija2 = document.createElement("th");
+      let celija3 = document.createElement("th");
+      let celija4 = document.createElement("th");
+
+      celija1.textContent = "Ime";
+      celija2.textContent = "Prezime";
+      celija3.textContent = "Prosek";
+      celija4.textContent = "Slika";
+
+      red.appendChild(celija1);
+      red.appendChild(celija2);
+      red.appendChild(celija3);
+      red.appendChild(celija4);
+
+      tabel.appendChild(red);
+
+      studenti.forEach(function (student) {
+        let red = document.createElement("tr");
+        let celija1 = document.createElement("td");
+        let celija2 = document.createElement("td");
+        let celija3 = document.createElement("td");
+        let celija4 = document.createElement("td");
+
+        celija1.textContent = student.ime;
+        celija2.textContent = student.prezime;
+        celija3.textContent = student.prosek;
+
+        let slika = document.createElement("img");
+        slika.src = "slika.jpg";
+        celija4.appendChild(slika);
+
+        red.appendChild(celija1);
+        red.appendChild(celija2);
+        red.appendChild(celija3);
+        red.appendChild(celija4);
+
+        tabel.appendChild(red);
+      });
+    </script>
+  </body>
+</html>
