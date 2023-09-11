@@ -6,7 +6,7 @@
     <title>Document</title>
   </head>
   <body>
-    <input type="text" name="" id="knjiga" required />
+    <input type="text" name="" id="naziv" required />
     <br />
     <br />
     <input type="text" name="" id="autor" required />
@@ -20,8 +20,43 @@
     <div id="bibiloteka"></div>
 
     <script>
-      let knjigaInput = document.getElementById("knjiga");
-      let knjiga = knjigaInput.value;
+      let nazivInput = document.getElementById("naziv");
+      let autorInput = document.getElementById("autor");
+      let godinaInput = document.getElementById("godina");
+      let dodajKnjigu = document.getElementById("dodaj");
+      let bibil = document.getElementById("biblioteka");
+
+      dodajKnjigu.addEventListener("click", () => {
+        let naziv = nazivInput.value;
+        let autor = autorInput.value;
+        let godina = godinaInput.value;
+
+        let knjigaDiv = document.createElement("div");
+        knjigaDiv.classList.add("knjiga");
+
+        let nazivParagraf = document.createElement("p");
+        nazivParagraf.textContent = `Naziv knjige je ${naziv}`;
+
+        let autorParagraf = document.createElement("p");
+        autorParagraf.textContent = `Autor knjige je ${autor}`;
+
+        let godinaParagraf = document.createElement("p");
+        godinaParagraf.textContent = `Godina izdanja je  ${godina}`;
+
+        let slika = document.createElement("img");
+        slika.src = "putanja.jpg";
+
+        knjigaDiv.appendChild(nazivParagraf);
+        knjigaDiv.appendChild(autorParagraf);
+        knjigaDiv.appendChild(godinaParagraf);
+        knjigaDiv.appendChild(slika);
+
+        bibliotekaDiv.appendChild(knjigaDiv);
+
+        nazivInput.value = " ";
+        autorInput.value = " ";
+        goinaInput.value = " ";
+      });
     </script>
   </body>
 </html>
