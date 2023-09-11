@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #nekiDiv {
+        display: flex;
+      }
+
+      .kartica {
+        border: 1px solid black;
+        width: 170px;
+        height: 170px;
+        padding: 10px;
+        margin: 20px;
+      }
+
+      .kartica img {
+        width: 60px;
+        width: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="nekiDiv"></div>
+    <script>
+      let vesti = [
+        { naslov: "Vest 1", vest: "Neka vest 1", slika: "slika.jpg" },
+        { naslov: "Vest 2", vest: "Neka vest 2", slika: "slika.jpg" },
+        { naslov: "Vest 3", vest: "Neka vest 3", slika: "slika.jpg" },
+        { naslov: "Vest 4", vest: "Neka vest 4", slika: "slika.jpg" },
+      ];
+
+      let divic = document.getElementById("nekiDiv");
+
+      vesti.forEach(function (vest) {
+        let kartica = document.createElement("div");
+        kartica.className = "kartica";
+
+        let slika = document.createElement("img");
+        slika.className = "slika";
+        slika.src = vest.slika;
+        kartica.appendChild(slika);
+
+        let naslovH = document.createElement("h3");
+        naslovH.className = "naslov";
+        naslovH.textContent = vest.naslov;
+        kartica.appendChild(naslovH);
+
+        let vestP = document.createElement("p");
+        vestP.className = "vest";
+        vestP.textContent = vest.vest;
+        kartica.appendChild(vestP);
+
+        let btn = document.createElement("button");
+        btn.className = "bttn";
+        btn.textContent = "Skrati";
+        kartica.appendChild(btn);
+
+        divic.appendChild(kartica);
+      });
+    </script>
+  </body>
+</html>
