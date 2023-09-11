@@ -6,19 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <form action="">
-      <input type="text" name="" id="knjiga" />
-      <br />
-      <br />
-      <input type="text" name="" id="autor" />
-      <br />
-      <br />
-      <input type="text" name="" id="izdanje" />
-      <br />
-      <br />
-      <button>Prosledi</button>
+    <input type="text" name="" id="knjiga" required />
+    <br />
+    <br />
+    <input type="text" name="" id="autor" required />
+    <br />
+    <br />
+    <input type="number" name="" id="godina" required />
+    <br />
+    <br />
+    <button id="dodaj">Prosledi</button>
 
-      <script></script>
-    </form>
+    <div id="bibiloteka"></div>
+
+    <script>
+      let knjigaInput = document.getElementById("knjiga");
+      let knjiga = knjigaInput.value;
+    </script>
   </body>
 </html>
