@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Vasa mail adresa</h1>
+    <div id="prikaz"></div>
+    <script>
+      // email adresa. mala slova brojevi, moze specijalan , znak ludo a, posle jos malih slova, tacka i 3 slova
+
+      let tekst = "asija123@gmail.com";
+
+      let divic = document.getElementById("prikaz");
+
+      function regi(tekst) {
+        let reg = /[a-z][0-9][@!#$%&*]*[@]+[a-z][/.]*[a-z]{2,3}/;
+        let kraj = tekst.match(reg);
+
+        let tek = document.createElement("p");
+        divic.appendChild(tek);
+
+        if (kraj != null) {
+          tek.textContent = "Ispravan mail";
+          tek.style.color = "green";
+        } else {
+          tek.textContent = "Greska";
+          tek.style.color = "red";
+        }
+      }
+
+      console.log(regi(tekst));
+    </script>
+  </body>
+</html>
