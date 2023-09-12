@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #leti {
+        display: flex;
+      }
+      .kartica {
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        margin: 10px;
+        padding: 10px;
+        background-color: #6fa381;
+      }
+
+      .kartica img {
+        width: 150px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="leti"></div>
+    <script>
+      let putovanja = [
+        {
+          mesto: "Turska",
+          aranzman: "all-inclusive",
+          dani: 10,
+          cena: 1300,
+          slika: "slika.jpg",
+        },
+        {
+          mesto: "Grcka",
+          aranzman: "half-inclusive",
+          dani: 7,
+          cena: 599,
+          slika: "slika.jpg",
+        },
+        {
+          mesto: "Hrvatska",
+          aranzman: "bnb",
+          dani: 5,
+          cena: 379,
+          slika: "slika.jpg",
+        },
+      ];
+
+      let divic = document.getElementById("leti");
+
+      putovanja.forEach(function (put) {
+        let kartica = document.createElement("div");
+        kartica.className = "kartica";
+
+        let slikaI = document.createElement("img");
+        slikaI.src = put.slika;
+        kartica.appendChild(slikaI);
+
+        let mestoH = document.createElement("h3");
+        mestoH.textContent = `Letovanje u ${put.mesto}`;
+        kartica.appendChild(mestoH);
+
+        let aranzmanP = document.createElement("p");
+        aranzmanP.textContent = `Aranzman: ${put.aranzman}`;
+        kartica.appendChild(aranzmanP);
+
+        let daniP = document.createElement("p");
+        daniP.textContent = `${put.dani} dana`;
+        kartica.appendChild(daniP);
+
+        let cenaP = document.createElement("p");
+        cenaP.textContent = `Po ceni od ${put.cena}e`;
+        kartica.appendChild(cenaP);
+
+        divic.appendChild(kartica);
+      });
+    </script>
+  </body>
+</html>
