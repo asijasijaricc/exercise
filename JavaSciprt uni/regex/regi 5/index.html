@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Automobilska registracija. Prva dva slova, pa onda crta pa onda 3 broja pa crta pa ponovo 2 slova
+
+      let tekst = "NP-06-BS";
+
+      function regips(tekst) {
+        let reg = /\w\w[-][0-9]{0,2}[-]\w\w/;
+        let kraj = tekst.match(reg);
+
+        if (kraj != null) {
+          return alert("Ispravno");
+        } else {
+          return alert("Neispravno");
+        }
+      }
+
+      console.log(regips(tekst));
+    </script>
+  </body>
+</html>

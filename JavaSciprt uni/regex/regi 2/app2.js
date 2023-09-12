@@ -16,4 +16,4 @@ function rigips1(tekst) {
   }
 }
 
-rigips1(prompt("Url adresa"));
+rigips1(rigips1("Url adresa"));
