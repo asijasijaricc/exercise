@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #domovi {
+        display: flex;
+      }
+
+      .kartica {
+        border: 1px solid black;
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        padding: 10px;
+        background-color: #6e6e34;
+      }
+
+      .kartica img {
+        width: 250px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="domovi"></div>
+
+    <script>
+      let nekretnine = [
+        {
+          vrsta: "kuca",
+          m2: 75.6,
+          mesto: "Novi Pazar",
+          cena: 660,
+          slika: "slika.jpg",
+        },
+        {
+          vrsta: "stan",
+          m2: 35.7,
+          mesto: "Zemun",
+          cena: 260,
+          slika: "slika.jpg",
+        },
+        {
+          vrsta: "poslovni prostor",
+          m2: 54.3,
+          mesto: "Zrenjanin",
+          cena: 420,
+          slika: "slika.jpg",
+        },
+        {
+          vrsta: "stan",
+          m2: 105.7,
+          mesto: "Bograd",
+          cena: 1560,
+          slika: "slika.jpg",
+        },
+        {
+          vrsta: "kuca",
+          m2: 175.1,
+          mesto: "Novi Sad",
+          cena: 2360,
+          slika: "slika.jpg",
+        },
+      ];
+
+      let divHT = document.getElementById("domovi");
+
+      nekretnine.forEach(function (nekretnina) {
+        let kartica = document.createElement("div");
+        kartica.className = "kartica";
+
+        let slika = document.createElement("img");
+        slika.src = "slika.jpg";
+        kartica.appendChild(slika);
+
+        let vrstaP = document.createElement("p");
+        vrstaP.textContent = nekretnina.vrsta;
+        kartica.appendChild(vrstaP);
+
+        let m2P = document.createElement("p");
+        m2P.textContent = nekretnina.m2;
+        kartica.appendChild(m2P);
+
+        let mestoP = document.createElement("p");
+        mestoP.textContent = nekretnina.mesto;
+        kartica.appendChild(mestoP);
+
+        let cenaP = document.createElement("p");
+        cenaP.textContent = nekretnina.cena;
+        kartica.appendChild(cenaP);
+
+        divHT.appendChild(kartica);
+      });
+    </script>
+  </body>
+</html>
