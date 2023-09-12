@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #ucenici {
+        border: 1px solid black;
+      }
+
+      #ucenici th {
+        border: 1px solid black;
+        padding: 7px;
+        background-color: #a06ecf;
+      }
+
+      #ucenici td {
+        background-color: #bcb9b9;
+        padding: 7px;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="ucenici"></table>
+
+    <script>
+      let ucenici = [
+        {
+          ime: "Marko Markovic",
+          IT: 7,
+          menadzment: 6,
+          programiranje: 8,
+          prosek: 7,
+        },
+        {
+          ime: "Ivana Ivanovic",
+          IT: 6,
+          menadzment: 8,
+          programiranje: 6,
+          prosek: 6.6,
+        },
+        {
+          ime: "Petar Petrovic",
+          IT: 9,
+          menadzment: 7,
+          programiranje: 8,
+          prosek: 8,
+        },
+        {
+          ime: "Jovana Jovanovic",
+          IT: 10,
+          menadzment: 10,
+          programiranje: 10,
+          prosek: 10,
+        },
+      ];
+
+      let tabela = document.getElementById("ucenici");
+
+      let red = document.createElement("tr");
+      let celija1 = document.createElement("th");
+      let celija2 = document.createElement("th");
+      let celija3 = document.createElement("th");
+      let celija4 = document.createElement("th");
+      let celija5 = document.createElement("th");
+
+      celija1.textContent = "Ime";
+      celija2.textContent = "IT";
+      celija3.textContent = "Mngt";
+      celija4.textContent = "C";
+      celija5.textContent = "Prosek";
+
+      red.appendChild(celija1);
+      red.appendChild(celija2);
+      red.appendChild(celija3);
+      red.appendChild(celija4);
+      red.appendChild(celija5);
+
+      tabela.appendChild(red);
+
+      ucenici.forEach(function (ucenik) {
+        let red = document.createElement("tr");
+        let celija1 = document.createElement("td");
+        let celija2 = document.createElement("td");
+        let celija3 = document.createElement("td");
+        let celija4 = document.createElement("td");
+        let celija5 = document.createElement("td");
+
+        celija1.textContent = ucenik.ime;
+        celija2.textContent = ucenik.IT;
+        celija3.textContent = ucenik.menadzment;
+        celija4.textContent = ucenik.programiranje;
+        celija5.textContent = ucenik.prosek;
+
+        red.appendChild(celija1);
+        red.appendChild(celija2);
+        red.appendChild(celija3);
+        red.appendChild(celija4);
+        red.appendChild(celija5);
+
+        tabela.appendChild(red);
+      });
+    </script>
+  </body>
+</html>
