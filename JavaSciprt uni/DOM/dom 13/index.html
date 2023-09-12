@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #prikaz {
+        display: flex;
+      }
+      .kartica {
+        border: 1px solid black;
+        width: 230px;
+        height: 230px;
+        margin: 20px;
+        padding: 10px;
+        background-color: #b38cd7;
+      }
+
+      .kartica img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="prikaz"></div>
+    <script>
+      let ucenik = [
+        {
+          slika: "slika.jpg",
+          ime: "Jovana Jovanovic",
+          smer: "Drustveno-jezicki",
+          odeljenje: "II2",
+        },
+        {
+          slika: "slika.jpg",
+          ime: "Andrej Milosevic",
+          smer: "Prirodno-matematicki",
+          odeljenje: "II5",
+        },
+        {
+          slika: "slika.jpg",
+          ime: "Sara Sretenovic",
+          smer: "Opsti",
+          odeljenje: "III3",
+        },
+        {
+          slika: "slika.jpg",
+          ime: "Sreten Sindjelic",
+          smer: "Drustveno-jezicki",
+          odeljenje: "I4",
+        },
+      ];
+
+      let divic = document.getElementById("prikaz");
+
+      ucenik.forEach(function (ucenik) {
+        let kartica = document.createElement("div");
+        kartica.className = "kartica";
+
+        let slika = document.createElement("img");
+        slika.src = ucenik.slika;
+        kartica.appendChild(slika);
+
+        let imeH = document.createElement("h3");
+        imeH.textContent = ucenik.ime;
+        kartica.appendChild(imeH);
+
+        let smerP = document.createElement("p");
+        smerP.textContent = ucenik.smer;
+        kartica.appendChild(smerP);
+
+        let odeljenjeP = document.createElement("p");
+        odeljenjeP.textContent = ucenik.odeljenje;
+        kartica.appendChild(odeljenjeP);
+
+        divic.appendChild(kartica);
+      });
+    </script>
+  </body>
+</html>
