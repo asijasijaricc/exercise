@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Digitron</title>
+    <script>
+      function izracunaj(operacija) {
+        var broj1 = parseInt(document.digitron.br1.value);
+        var broj2 = parseInt(document.digitron.br2.value);
+        var rezultat = 0;
+        alert(document.digitron.br1.value.length);
+        if (isNaN(broj1) == false && isNaN(broj2) == false) {
+          switch (operacija) {
+            case 1:
+              rezultat = broj1 + broj2;
+              break;
+            case 2:
+              rezultat = broj1 - broj2;
+              break;
+            case 3:
+              rezultat = broj1 * broj2;
+              break;
+            case 4:
+              rezultat = broj1 / broj2;
+              break;
+          }
+
+          document.digitron.rez.value = rezultat;
+        } else {
+          alert("Digitron radi samo sa brojevima");
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>D I G I T R O N</h1>
+    <form name="digitron" action="" method="">
+      <p>Unestite prvi broj:</p>
+      <br />
+      <input type="text" name="br1" value="" />
+      <p>Unestite drugi broj:</p>
+      <br />
+      <input type="text" name="br2" value="" /><br /><br />
+
+      <input type="button" name="saberi" value=" + " onClick="izracunaj(1);" />
+      <input type="button" name="oduzmi" value=" - " onClick="izracunaj(2);" />
+      <input type="button" name="pomnozi" value=" * " onClick="izracunaj(3);" />
+      <input type="button" name="podeli" value=" / " onClick="izracunaj(4);" />
+      <p>Rezultat:</p>
+      <br />
+
+      <input type="text" name="rez" value="" readonly="readonly" />
+    </form>
+  </body>
+</html>
