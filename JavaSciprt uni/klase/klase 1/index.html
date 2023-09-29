@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //       3. (10] Kreirati klasu Smer koja ima tribute nazivSmera, brojStudenata, trajanjeStudija, nizPredmeta. Kreirati konstruktor sa argumentima pomocu kog se ti atributi (svi osim nizPredmeta) mogu unositi rucno od strane korisnika. (2.5) Atribut nizPredmeta se unosi naknadno, kroz metodu (detaljnije u tekstu ispod).
+      //   Klasa sadrzi:
+      //   - metodu za ispis informacija o smeru, tj. njegovih atributa (Npr. "Naziv smera je - .., smer ima - ...- studenata. Trajanje studija na ovom smeru je - ... - godine") (1) (Primer: smer1.ispisi ))
+      //   - metodu za ispisivanje odgovarajuce poruke o broju studenata, koja ima 1 argument, broj studenata koji su se prijavili za upis na smer. (Argument uneti rucno).
+      //   Ukoliko je broj studenata koji su se prijavili za upis manji od broja studenata na tom smeru (atribut brojStudenata), metoda kroz alert ispisuje "Manje studenata", ukoliko je broj studenata koji su se prijavili jednak broju studenata na smeru, metoda ispisuje "Isti broj studenata", u suprotnom, metoda ispisuje "Ima vise prijava". (2.5) (Primer: smer1.porukaOBrojuStudenata(9))
+      //   - Metodu bez argumenata koja unosi predmete u atribut nizPredmeta, i to tako sto korisnik predmete najpre unese kroz prompt, potom se odgovarajucom funkcijom sadrzai prompta pretvori u niz, potom sve naive predmeta odgovarajucom funkcijom prevesti u velika slova, a potom ih u tom obliku dodeliti atributu nizPredmeta odgovarajuce smera. Nakon toga novi nizPredmeta na smeru prikazati pomocu console. log. (4) (Primer: smer1.dodajPredmete(|)
+      //   Kreirati objekat klase i testirati rad metoda nad njim
+
+      class Smer {
+        constructor(nazivSmera, brojStudenata, trajanjeStudija) {
+          this.nazivSmera = nazivSmera;
+          this.brojStudenata = brojStudenata;
+          this.trajanjeStudija = trajanjeStudija;
+          this.nizPredmeta = [];
+        }
+
+        ispisi() {
+          console.log(
+            `Naziv smera je - ${this.nazivSmera}, smer ima - ${this.brojStudenata} studenata. Trajanje studija na ovom smeru je - ${this.trajanjeStudija} godine`
+          );
+        }
+
+        porukaOBrojuStudenata(prijavljeniBrojStudenata) {
+          if (prijavljeniBrojStudenata < this.brojStudenata) {
+            console.log("Manje studenata");
+          } else if (prijavljeniBrojStudenata === this.brojStudenata) {
+            console.log("Isti broj studenata");
+          } else {
+            console.log("Ima više prijava");
+          }
+        }
+
+        dodajPredmete() {
+          const unosPredmeta = prompt("Unesite predmete odvojene zapetama:");
+          const nizPredmetaUnos = unosPredmeta.split(",");
+          const nizPredmetaVelikaSlova = nizPredmetaUnos.map((predmet) =>
+            predmet.toUpperCase()
+          );
+          this.nizPredmeta = nizPredmetaVelikaSlova;
+          console.log("Niz predmeta na smeru:", this.nizPredmeta);
+        }
+      }
+
+      // Kreiranje objekta klase Smer
+      const smer1 = new Smer("Informatika", 50, 4);
+
+      // Testiranje metoda nad objektom
+      smer1.ispisi();
+      smer1.porukaOBrojuStudenata(45);
+      smer1.dodajPredmete();
+      //
+    </script>
+  </body>
+</html>
