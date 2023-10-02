@@ -5,5 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body></body>
+  <body>
+    <script>
+      class Doktor {
+        constructor(ime, specijalnost, brPP) {
+          this.ime = ime;
+          this.specijalnost = specijalnost;
+          this.brPP = brPP;
+        }
+      }
+      function pregledPacijenta() {
+        this.brPP++;
+        let datum = new Date();
+        let dan = datum.getDay();
+        let mesec = datum.getMonth();
+        let godina = datum.getFullYear;
+        alert(`Pacijent je pregledan ${dan}:${mesec}:${godina}`);
+        alert(
+          `Doktor ${this.ime} je pregledao pacijenta. Ukupan broj pregledaniih pacijenata je ${this.brPP}`
+        );
+      }
+
+      function pSpecijalnost(nSpecijalnost) {
+        this.specijalnost = nSpecijalnost;
+        alert(
+          `Specijalnost dokotora ${this.ime} uespesno je promenjena u ${nSpecijalnost}`
+        );
+      }
+
+      function ispis() {
+        document.write(`Detalji o doktoru: ${this.ime} </br>`);
+        document.write(`Specijalnost: ${this.specijalnost} </br>`);
+        document.write(`Ukupan broj pregledanih pacijenata: ${this.brPP}`);
+      }
+
+      let doktor1 = new Doktor("Ivan", "Hirurg", 7);
+      doktor1.pSpecijalnost("Dermatologija");
+      doktor1.ispis();
+
+      let doktor2 = new Doktor("Lejla", "Dermatolog", 40);
+    </script>
+  </body>
 </html>
