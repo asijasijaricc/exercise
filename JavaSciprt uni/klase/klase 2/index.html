@@ -7,7 +7,45 @@
   </head>
   <body>
     <script>
-      //
+      class Student {
+        constructor(i = "Petar", p = "Petrovic", brI = 2134) {
+          this.ime = i;
+          this.prezime = p;
+          this.indeks = brI;
+          this.ocene = [];
+        }
+
+        predstaviSe() {
+          console.log(`Moje ime je ${this.ime}, a prezime ${this.prezime}`);
+        }
+
+        prosek() {
+          let n = this.ocene.length;
+          let suma = 0;
+          for (let i = 0; i < n; i++) {
+            s += Number(this.ocene[i]);
+          }
+          return s / n;
+        }
+      }
+
+      let Student = new Student();
+      student.predstaviSe();
+
+      let student1 = new Student("Asija", "Sijaric", "3534");
+      student1.predstaviSe();
+
+      let student2 = new Student("Emina", "Tutic", "3424");
+
+      let tekst = prompt("Unesite ocene studenta");
+
+      let nizOcena = tekst.split(" ");
+
+      student2.ocene = nizOcena;
+      student2.predstaviSe();
+      console.log(
+        `Student ${student2.ime} ${student2} ima prosek ${student2.prosek()}`
+      );
     </script>
   </body>
 </html>
