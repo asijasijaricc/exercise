@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="slova"></div>
+
+    <script>
+      let regi = /^https:\/\/www\.[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
+      let tekst = "htpss://www.google.com";
+      function reg(tekst) {
+        let kraj = tekst.match(regi);
+
+        let p = document.createElement("p");
+        document.getElementById("slova");
+        slova.appendChild(p);
+
+        if (kraj !== null) {
+          p.textContent = "Ispravan mail";
+          p.style.color = "green";
+        } else {
+          p.textContent = "Greska";
+          p.style.color = "red";
+        }
+      }
+
+      reg(tekst);
+    </script>
+  </body>
+</html>
