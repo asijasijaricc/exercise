@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provera lozinke</title>
+  </head>
+  <body>
+    <input type="text" id="lozinkaInput" />
+    <p id="rezultat" style="color: red"></p>
+    <script>
+      let lozinkaInput = document.getElementById("lozinkaInput");
+      let rezultat = document.getElementById("rezultat");
+
+      lozinkaInput.addEventListener("keyup", function () {
+        let unetaLozinka = lozinkaInput.value;
+
+        let regExp =
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d.*\d.*\d)[A-Za-z\d!@#$%^&*()_+]{8,}$/;
+
+        if (regExp.test(unetaLozinka)) {
+          rezultat.textContent = "Ispravno uneta lozinka";
+          rezultat.style.color = "green";
+        } else {
+          rezultat.textContent = "Greska u unosu";
+          rezultat.style.color = "red";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Provera registracije</title>
+  </head>
+  <body>
+    <script>
+      let unetaRegistracija = prompt("Unesite automobilsku registraciju:");
+
+      // Kreiranje regularnog izraza za proveru registracije
+      let regExp = /^[A-Z]{2}-\d{3}-[A-Z]+$/;
+
+      if (regExp.test(unetaRegistracija)) {
+        alert("Uneta registracija je ispravna.");
+      } else {
+        alert("Uneta registracija nije ispravna.");
+      }
+    </script>
+  </body>
+</html>

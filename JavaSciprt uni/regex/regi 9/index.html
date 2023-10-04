@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="slova"></div>
+    <script>
+      function proveriURL() {
+        let tekst = prompt("Unesite URL:");
+
+        let reg = /^https:\/\/www\.[a-zA-Z0-9]+\.[a-zA-Z]{2,4}$/;
+
+        let p = document.createElement("p");
+        document.getElementById("slova").appendChild(p);
+
+        if (reg.test(tekst)) {
+          p.textContent = "Ispravno uneta URL adresa";
+          p.style.color = "green";
+        } else {
+          p.textContent = "Greska u unosu";
+          p.style.color = "red";
+        }
+      }
+
+      proveriURL();
+    </script>
+  </body>
+</html>
