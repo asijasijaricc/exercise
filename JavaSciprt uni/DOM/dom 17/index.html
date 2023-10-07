@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="prikaz"></div>
+
+    <script>
+      let ucenici = [
+        {
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 5252345,
+        },
+        {
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 5252345,
+        },
+        {
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 5252345,
+        },
+        {
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 5252345,
+        },
+      ];
+
+      let divic = document.getElementById("prikaz");
+
+      let red = document.createElement("tr");
+      let celija1 = document.createElement("th");
+      let celija2 = document.createElement("th");
+      let celija3 = document.createElement("th");
+
+      celija1.textContent = "Ime";
+      celija2.textContent = "Prezime";
+      celija3.textContent = "Index";
+
+      red.appendChild(celija1);
+      red.appendChild(celija2);
+      red.appendChild(celija3);
+
+      divic.appendChild(red);
+
+      ucenici.forEach(function (ucenik) {
+        let red = document.createElement("tr");
+        let celija1 = document.createElement("td");
+        let celija2 = document.createElement("td");
+        let celija3 = document.createElement("td");
+
+        celija1.textContent = ucenik.ime;
+        celija2.textContent = ucenik.prezime;
+        celija3.textContent = ucenik.index;
+
+        red.appendChild(celija1);
+        red.appendChild(celija2);
+        red.appendChild(celija3);
+
+        divic.appendChild(red);
+      });
+    </script>
+  </body>
+</html>

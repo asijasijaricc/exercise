@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="inde"></div>
+
+    <script>
+      let ucenik = [
+        {
+          slika: "slika.jpeg",
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 3144,
+          godina: "Prva",
+        },
+        {
+          slika: "slika.jpeg",
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 3144,
+          godina: "Prva",
+        },
+        {
+          slika: "slika.jpeg",
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 3144,
+          godina: "Prva",
+        },
+        {
+          slika: "slika.jpeg",
+          ime: "Asija",
+          prezime: "Sijaric",
+          index: 3144,
+          godina: "Prva",
+        },
+      ];
+
+      let divic = document.getElementById("inde");
+
+      ucenik.forEach(function (ucenik) {
+        let kartica = document.createElement("div");
+        kartica.className = "kartica";
+
+        let slikai = document.createElement("img");
+        slikai.src = ucenik.slika;
+        kartica.appendChild(slikai);
+
+        let imep = document.createElement("p");
+        imep.textContent = ucenik.ime;
+        kartica.appendChild(imep);
+
+        let prezimep = document.createElement("p");
+        prezimep.textContent = ucenik.prezime;
+        kartica.appendChild(prezimep);
+
+        let indexp = document.createElement("p");
+        indexp.textContent = ucenik.index;
+        kartica.appendChild(indexp);
+
+        let godinap = document.createElement("p");
+        godinap.textContent = ucenik.godina;
+        kartica.appendChild(godinap);
+
+        divic.appendChild(kartica);
+      });
+    </script>
+  </body>
+</html>
